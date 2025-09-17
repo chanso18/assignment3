@@ -1,0 +1,199 @@
+/* Timeline background section */
+.timeline-bg {
+	background: #f8f8f8;
+	border-radius: 0;
+	margin: 0 0 40px 0;
+	padding: 32px 0;
+	width: 100vw;
+	max-width: none;
+	box-sizing: border-box;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	transform: translateX(-50%);
+}
+/* Center and bold the final paragraph in the body */
+.timeline-footer {
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	margin: 32px 0;
+}
+/* Make the first header paragraph larger */
+.header-desc {
+	font-size: 1.35em;
+	color: #fff;
+	text-align: center;
+	margin: 0 0 32px 0;
+}
+/* Responsive: Stack timeline cards vertically on small screens */
+@media (max-width: 550px) {
+	section {
+		display: flex;
+		flex-wrap: wrap;
+		white-space: normal;
+		overflow-x: hidden !important;
+		margin-left: 5vw;
+		margin-right: 5vw;
+		padding-bottom: 0;
+		scrollbar-width: none; /* Firefox */
+	}
+	section::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, Opera */
+	}
+	section > div {
+		width: 100%;
+		min-width: 0;
+		max-width: none;
+		/*margin-right: 0;*/
+		margin-bottom: 16px;
+		display: flex;
+		flex: 1 1 100%;
+	}
+}
+.header-text h1 {
+	 font-size: clamp(32px, 6vw, 48px); /* Responsive font size: min 32px, max 48px, scales with viewport */
+	 font-weight: bold;
+}
+/* Add your CSS here */
+/* Set the background color of the page to dark grey */
+body {
+	/*background-color: #222; Dark grey background */
+	background: #0068B5 100%;
+	font-family: 'Neo Sans Intel', Arial, Helvetica, sans-serif;
+}
+/* Style for the Intel logo box */
+.logo-box {
+	background: linear-gradient(90deg, #0072c6 0%, #00c853 100%); /* Blue to green gradient */
+	padding: 16px; /* Space inside box */
+	border-radius: 16px; /* Rounded corners */
+	width: 20vw; /* Box width is 20% of viewport */
+	min-width: 120px; /* Prevent box from being too small */
+	margin-right: 5vw; /* Space between logo and text */
+	box-sizing: border-box;
+}
+/* Flex container for header */
+.header-flex {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 24px;
+	margin-top: 32px;
+	margin-bottom: 32px;
+}
+
+/* Style for header text */
+.header-text {
+	color: #fff;
+	flex: 1;
+	min-width: 220px;
+	 display: flex;
+	 justify-content: flex-start;
+	 align-items: center;
+}
+
+.logo-box img {
+	width: 100%; /* Logo fills the box width */
+	max-width: 100%; /* Prevent overflow */
+	height: auto;
+}
+
+/* Timeline Cards Section - Flexbox layout */
+section {
+	white-space: nowrap; /* Prevent cards from wrapping */
+	padding: 24px 0;
+	overflow-x: auto; /* Add horizontal scrollbar if needed */
+	margin-left: min(10vw, 100px); /* Margin on left side, max 200px */
+	margin-right: min(10vw, 100px); /* Margin on right side, max 200px */
+	scroll-snap-type: x mandatory;
+}
+
+/* Style for each card */
+section > div {
+	background: #0068B5; /* Start with solid blue */
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+	padding: 16px;
+		width: 21vw;
+	min-width: 265px;
+	max-width: 400px;
+	box-sizing: border-box;
+	transition: box-shadow 0.2s;
+	display: inline-block;
+	margin-right: 16px;
+	white-space: normal;
+	position: relative;
+	overflow: hidden;
+	scroll-snap-align: start;
+}
+
+/* Gradually increase green for each card */
+section > div:nth-child(2) { background: #187ebc; } /* Distinct blue shade */
+section > div:nth-child(3) { background: #00a1e4; } /* Distinct blue shade */
+section > div:nth-child(4) { background: #0098a6; }
+section > div:nth-child(5) { background: #00b6b2; }
+section > div:nth-child(6) { background: #00c6c4; }
+section > div:nth-child(7) { background: #00c853; }
+section > div:nth-child(8) { background: #5af06a; }
+section > div:nth-child(9) { background: #7aff7a; }
+	
+/* Optional: Add hover effect for cards */
+
+/* Hide card images by default, show on hover */
+/* Card image is always visible, but hidden on hover using visibility and opacity */
+
+.card-img {
+	display: block;
+	width: 100%;
+	margin: 12px 0;
+	border-radius: 8px;
+	transition: opacity 0.3s;
+	opacity: 1;
+	position: relative;
+	z-index: 1;
+}
+section > div:hover .card-img {
+	opacity: 0;
+}
+
+/* Hide h2 and h3 on hover, keep space */
+
+section > div h2, section > div h3 {
+	transition: opacity 0.3s;
+	opacity: 1;
+	position: relative;
+	z-index: 1;
+}
+section > div:hover h2, section > div:hover h3 {
+	opacity: 0;
+}
+
+/* Hide card paragraph by default, show on hover, keep space */
+
+section > div p {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  margin: 0;
+	  padding: 10px;
+	  background: rgba(0,0,0,0.85);
+	  color: #fff;
+	  box-sizing: border-box;
+	  opacity: 0;
+	  pointer-events: none;
+	  transition: opacity 0.3s;
+	  z-index: 2;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  text-align: center;
+	  font-size: 1.5em;
+}
+  section > div:hover p {
+	opacity: 1;
+	pointer-events: auto;
+}
