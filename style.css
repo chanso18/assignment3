@@ -1,16 +1,74 @@
-/* Timeline background section */
-.timeline-bg {
-	background: #f8f8f8;
+:root:dir(rtl) body, :root:dir(rtl) .unified-bg {
+	direction: rtl;
+	margin: 0 !important;
+}
+:root:dir(rtl) .header-flex {
+	flex-direction: row-reverse;
+}
+:root:dir(rtl) .logo-box {
+	order: 2;
+	margin-left: 0;
+	margin-right: 0;
+	align-items: flex-end;
+}
+:root:dir(rtl) .header-text {
+	order: 1;
+	text-align: left;
+	justify-content: flex-start;
+}
+:root:dir(rtl) .header-text {
+	text-align: right;
+	justify-content: flex-end;
+}
+:root:dir(rtl) .header-desc {
+	text-align: right;
+}
+:root:dir(rtl) .logo-box {
+	margin-left: 5vw;
+	margin-right: 0;
+}
+:root:dir(rtl) section {
+	direction: rtl;
+	text-align: right;
+}
+:root:dir(rtl) section > div {
+	text-align: right;
+}
+:root:dir(rtl) .container .card {
+	text-align: right;
+}
+/* Flip scrollbar for RTL */
+:root:dir(rtl) section {
+	scrollbar-width: thin;
+	scrollbar-color: #0068B5 #f9f9f6;
+}
+:root:dir(rtl) section::-webkit-scrollbar {
+	width: 8px;
+	background: #f9f9f6;
+}
+:root:dir(rtl) section::-webkit-scrollbar-thumb {
+	background: #0068B5;
+	border-radius: 4px;
+}
+/* Flip buttons at bottom of columns */
+:root:dir(rtl) .card-body .mt-3 {
+	text-align: left !important;
+}
+
+/* Three-column section card border color */
+.container .card {
+	border: 2px solid #00C7FD;
 	border-radius: 0;
-	margin: 0 0 40px 0;
-	padding: 32px 0;
-	width: 100vw;
-	max-width: none;
+}
+/* Unified background for timeline and columns */
+.unified-bg {
+	background: #f9f9f6; /* Off-white background */
+	padding-top: 32px;
+	padding-bottom: 32px;
+	width: 100%; /* Fix overflow and extra space in RTL */
 	box-sizing: border-box;
-	position: relative;
-	left: 50%;
-	right: 50%;
-	transform: translateX(-50%);
+	/* Remove these: */
+	/* left: 50%; right: 50%; transform: translateX(-50%); */
 }
 /* Center and bold the final paragraph in the body */
 .timeline-footer {
@@ -20,12 +78,6 @@
 	margin: 32px 0;
 }
 /* Make the first header paragraph larger */
-.header-desc {
-	font-size: 1.35em;
-	color: #fff;
-	text-align: center;
-	margin: 0 0 32px 0;
-}
 /* Responsive: Stack timeline cards vertically on small screens */
 @media (max-width: 550px) {
 	section {
@@ -64,7 +116,7 @@ body {
 }
 /* Style for the Intel logo box */
 .logo-box {
-	background: linear-gradient(90deg, #0072c6 0%, #00c853 100%); /* Blue to green gradient */
+	background: #0068B5; /* Blue to green gradient */
 	padding: 16px; /* Space inside box */
 	border-radius: 16px; /* Rounded corners */
 	width: 20vw; /* Box width is 20% of viewport */
@@ -75,12 +127,19 @@ body {
 /* Flex container for header */
 .header-flex {
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: flex-start;
-	gap: 24px;
-	margin-top: 32px;
-	margin-bottom: 32px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 32px 0;
+}
+
+/* Heading background color */
+header {
+  background: #00C7FD;;
+  background: linear-gradient(90deg, rgba(0, 199, 253, 1) 0%, rgba(0, 104, 181, 1) 56%, rgba(0, 181, 103, 1) 100%);
 }
 
 /* Style for header text */
@@ -104,19 +163,23 @@ section {
 	white-space: nowrap; /* Prevent cards from wrapping */
 	padding: 24px 0;
 	overflow-x: auto; /* Add horizontal scrollbar if needed */
-	margin-left: min(10vw, 100px); /* Margin on left side, max 200px */
-	margin-right: min(10vw, 100px); /* Margin on right side, max 200px */
+	margin-left: min(10vw, 100px); /* Margin on left side, max 100px */
+	margin-right: min(10vw, 100px); /* Margin on right side, max 100px */
 	scroll-snap-type: x mandatory;
+:root:dir(rtl) section {
+	margin-left: 0;
+	margin-right: min(10vw, 100px); /* Only right margin in RTL */
+}
 }
 
 /* Style for each card */
 section > div {
-	background: #0068B5; /* Start with solid blue */
-	border: 1px solid #ddd;
+	background: #f9f9f6; /* Off-white background */
+	border: 2px solid #0068B5; /* Blue border */
 	border-radius: 8px;
-	box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+	box-shadow: 0 4px 16px rgba(0,0,0,0.18); /* Persistent shadow effect */
 	padding: 16px;
-		width: 21vw;
+	width: 21vw;
 	min-width: 265px;
 	max-width: 400px;
 	box-sizing: border-box;
@@ -129,16 +192,7 @@ section > div {
 	scroll-snap-align: start;
 }
 
-/* Gradually increase green for each card */
-section > div:nth-child(2) { background: #187ebc; } /* Distinct blue shade */
-section > div:nth-child(3) { background: #00a1e4; } /* Distinct blue shade */
-section > div:nth-child(4) { background: #0098a6; }
-section > div:nth-child(5) { background: #00b6b2; }
-section > div:nth-child(6) { background: #00c6c4; }
-section > div:nth-child(7) { background: #00c853; }
-section > div:nth-child(8) { background: #5af06a; }
-section > div:nth-child(9) { background: #7aff7a; }
-	
+
 /* Optional: Add hover effect for cards */
 
 /* Hide card images by default, show on hover */
@@ -194,6 +248,18 @@ section > div p {
 	  font-size: 1.5em;
 }
   section > div:hover p {
-	opacity: 1;
+	margin: 0;
+	padding-bottom: 24px;
 	pointer-events: auto;
+}
+/* Language switcher: fixed top right for LTR, top left for RTL */
+.lang-switcher-container {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 1000;
+}
+:root:dir(rtl) .lang-switcher-container {
+    right: auto;
+    left: 12px;
 }
