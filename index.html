@@ -150,13 +150,13 @@
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h4 class="card-title text-center">Column One</h4>
+              <h4 class="card-title text-center">RISE Strategy</h4>
               <p class="card-text text-center">
-                This is the first column. You can add any content here, such as text, images, or links.
+                Under its RISE (Responsible, Inclusive, Sustainable, Enabling) strategy, Intel sets ambitious 2030 goals, including driving industry-wide progress on climate action, water stewardship, and waste reduction.
               </p>
-              <!-- Learn More button: align left for RTL, right for LTR -->
-              <div class="mt-3 text-left text-md-right" dir="auto">
-                <a href="#" class="btn btn-primary">Learn More</a>
+              <!-- Learn More button: align left for LTR, right for RTL -->
+              <div class="mt-3" dir="auto">
+                <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
               </div>
             </div>
           </div>
@@ -165,13 +165,13 @@
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h4 class="card-title text-center">Column Two</h4>
+              <h4 class="card-title text-center">Commitment</h4>
               <p class="card-text text-center">
-                This is the second column. It will stack vertically on small screens and sit side-by-side on larger screens.
+                In 2022, Intel pledged to achieve net-zero greenhouse gas emissions (Scope 1 and 2) by 2040. This commitment builds on decades of environmental intiatives and partnerships across the semiconductor industry.
               </p>
-              <!-- Learn More button: align left for RTL, right for LTR -->
-              <div class="mt-3 text-left text-md-right" dir="auto">
-                <a href="#" class="btn btn-primary">Learn More</a>
+              <!-- Learn More button: align left for LTR, right for RTL -->
+              <div class="mt-3" dir="auto">
+                <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
               </div>
             </div>
           </div>
@@ -180,13 +180,13 @@
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h4 class="card-title text-center">Column Three</h4>
+              <h4 class="card-title text-center">Water & Waste</h4>
               <p class="card-text text-center">
-                This is the third column. You can customize the content as needed.
+                Intel conserves billions of gallons of water annually and collaborates with local communities to restore watersheds. Intel also upcycles and recycles materials to reduce waste and advance a circular economy.
               </p>
-              <!-- Learn More button: align left for RTL, right for LTR -->
-              <div class="mt-3 text-left text-md-right" dir="auto">
-                <a href="#" class="btn btn-primary">Learn More</a>
+              <!-- Learn More button: align left for LTR, right for RTL -->
+              <div class="mt-3" dir="auto">
+                <a href="#" class="btn btn-primary learn-more-btn">Learn More</a>
               </div>
             </div>
           </div>
@@ -195,6 +195,54 @@
     </div>
   </div>
 
+  <!-- Newsletter Subscription Form -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card p-4" style="background: #f9f9f6; border: 2px solid #00C7FD;">
+          <h3 class="mb-3 text-center" style="color: #000;">Subscribe to Intel’s Sustainability Newsletter</h3>
+          <form>
+            <!-- Full Name -->
+            <div class="form-group newsletter-form">
+              <label for="subscriberName" style="color: #000;" id="labelName">Full Name</label>
+              <input type="text" class="form-control" id="subscriberName" placeholder="Enter your full name" style="border: 1.5px solid #000;" autocomplete="name">
+            </div>
+            <!-- Email -->
+            <div class="form-group newsletter-form">
+              <label for="subscriberEmail" style="color: #000;" id="labelEmail">Email address</label>
+              <input type="email" class="form-control" id="subscriberEmail" placeholder="Enter your email" style="border: 1.5px solid #000;" autocomplete="email">
+            </div>
+            <!-- Phone Number -->
+            <div class="form-group newsletter-form">
+              <label for="subscriberPhone" style="color: #000;" id="labelPhone">Phone Number</label>
+              <input type="tel" class="form-control" id="subscriberPhone" placeholder="Enter your phone number" style="border: 1.5px solid #000;" autocomplete="tel">
+            </div>
+            <!-- Message -->
+            <div class="form-group newsletter-form">
+              <label for="subscriberMessage" style="color: #000;" id="labelMessage">Message</label>
+              <textarea class="form-control" id="subscriberMessage" rows="3" placeholder="Your message..." style="border: 1.5px solid #000;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" style="background: #00C7FD; color: #fff; border: none;">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-5" style="background: #f9f9f6; border-top: 2px solid #00C7FD; padding: 32px 0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <span style="color: #0068B5; font-weight: bold; margin-right: 24px;">About Us</span>
+          <span style="color: #0068B5; font-weight: bold; margin-right: 24px;">Contact</span>
+          <span style="color: #0068B5; font-weight: bold; margin-right: 24px;">Terms of Use</span>
+          <span style="color: #0068B5; font-weight: bold;">Privacy Policy</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <!-- Add Bootstrap JS and dependencies (jQuery and Popper.js) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -202,6 +250,33 @@
 
   <!-- Language Switcher Script -->
   <script>
+    // Newsletter RTL/LTR alignment
+    function updateNewsletterDirection() {
+      var dir = document.documentElement.getAttribute('dir');
+      var labels = document.querySelectorAll('.newsletter-form label');
+      var inputs = document.querySelectorAll('.newsletter-form input, .newsletter-form textarea');
+      if (dir === 'rtl') {
+        labels.forEach(function(label) {
+          label.classList.add('text-right');
+        });
+        inputs.forEach(function(input) {
+          input.classList.add('text-right');
+          input.style.textAlign = 'right';
+        });
+      } else {
+        labels.forEach(function(label) {
+          label.classList.remove('text-right');
+        });
+        inputs.forEach(function(input) {
+          input.classList.remove('text-right');
+          input.style.textAlign = '';
+        });
+      }
+    }
+    document.getElementById('langSwitcher').addEventListener('change', function() {
+      setTimeout(updateNewsletterDirection, 100);
+    });
+    window.addEventListener('DOMContentLoaded', updateNewsletterDirection);
     document.getElementById('langSwitcher').addEventListener('change', function() {
       var lang = this.value;
       var html = document.documentElement;

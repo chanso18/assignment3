@@ -7,14 +7,15 @@
 }
 :root:dir(rtl) .logo-box {
 	order: 2;
-	margin-left: 0;
-	margin-right: 0;
+	margin-right: 30px;
 	align-items: flex-end;
 }
 :root:dir(rtl) .header-text {
 	order: 1;
 	text-align: left;
 	justify-content: flex-start;
+	margin-right: 5vw;
+  margin-left: 30px;
 }
 :root:dir(rtl) .header-text {
 	text-align: right;
@@ -23,10 +24,7 @@
 :root:dir(rtl) .header-desc {
 	text-align: right;
 }
-:root:dir(rtl) .logo-box {
-	margin-left: 5vw;
-	margin-right: 0;
-}
+
 :root:dir(rtl) section {
 	direction: rtl;
 	text-align: right;
@@ -117,6 +115,7 @@ body {
 	min-width: 120px; /* Prevent box from being too small */
 	margin-right: 5vw; /* Space between logo and text */
 	box-sizing: border-box;
+	margin-left: 30px;
 }
 /* Flex container for header */
 .header-flex {
@@ -224,7 +223,7 @@ section > div p {
 	  height: 100%;
 	  margin: 0;
 	  padding: 10px;
-	  background: rgba(0,0,0,0.85);
+		background: #222; /* Dark grey background on hover */
 	  color: #fff;
 	  box-sizing: border-box;
 	  opacity: 0;
@@ -237,7 +236,9 @@ section > div p {
 	  text-align: center;
 	  font-size: 1.5em;
 }
-  section > div:hover p {
+section > div:hover p {
+	background: #222; /* Dark grey background on hover */
+	opacity: 1;
 	margin: 0;
 	padding-bottom: 24px;
 	pointer-events: auto;
@@ -252,4 +253,15 @@ section > div p {
 :root:dir(rtl) .lang-switcher-container {
     right: auto;
     left: 12px;
+}
+
+/* Align Learn More buttons: left for LTR, right for RTL */
+.learn-more-btn {
+  float: left;
+}
+:root:dir(rtl) .learn-more-btn {
+  float: right;
+}
+.newsletter-form label {
+  display: block;
 }
