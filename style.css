@@ -34,9 +34,6 @@
 :root:dir(rtl) section > div {
 	text-align: right;
 }
-:root:dir(rtl) .container .card {
-	text-align: right;
-}
 /* Flip scrollbar for RTL */
 :root:dir(rtl) section {
 	scrollbar-width: thin;
@@ -50,10 +47,7 @@
 	background: #0068B5;
 	border-radius: 4px;
 }
-/* Flip buttons at bottom of columns */
-:root:dir(rtl) .card-body .mt-3 {
-	text-align: left !important;
-}
+
 
 /* Three-column section card border color */
 .container .card {
@@ -166,10 +160,6 @@ section {
 	margin-left: min(10vw, 100px); /* Margin on left side, max 100px */
 	margin-right: min(10vw, 100px); /* Margin on right side, max 100px */
 	scroll-snap-type: x mandatory;
-:root:dir(rtl) section {
-	margin-left: 0;
-	margin-right: min(10vw, 100px); /* Only right margin in RTL */
-}
 }
 
 /* Style for each card */

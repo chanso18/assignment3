@@ -145,7 +145,7 @@
 
     <!-- New Three-Column Section (Bootstrap Grid) -->
     <div class="container my-5">
-      <div class="row">
+  <div class="row">
         <!-- First column -->
         <div class="col-md-4 mb-4">
           <div class="card h-100">
@@ -155,7 +155,7 @@
                 This is the first column. You can add any content here, such as text, images, or links.
               </p>
               <!-- Learn More button: align left for RTL, right for LTR -->
-              <div class="mt-3 text-left text-md-left" dir="auto">
+              <div class="mt-3 text-left text-md-right" dir="auto">
                 <a href="#" class="btn btn-primary">Learn More</a>
               </div>
             </div>
@@ -170,7 +170,7 @@
                 This is the second column. It will stack vertically on small screens and sit side-by-side on larger screens.
               </p>
               <!-- Learn More button: align left for RTL, right for LTR -->
-              <div class="mt-3 text-left text-md-left" dir="auto">
+              <div class="mt-3 text-left text-md-right" dir="auto">
                 <a href="#" class="btn btn-primary">Learn More</a>
               </div>
             </div>
@@ -185,7 +185,7 @@
                 This is the third column. You can customize the content as needed.
               </p>
               <!-- Learn More button: align left for RTL, right for LTR -->
-              <div class="mt-3 text-left text-md-left" dir="auto">
+              <div class="mt-3 text-left text-md-right" dir="auto">
                 <a href="#" class="btn btn-primary">Learn More</a>
               </div>
             </div>
@@ -209,11 +209,11 @@
       if (lang === 'ar') {
         html.setAttribute('lang', 'ar');
         html.setAttribute('dir', 'rtl');
-        bootstrapCss.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.rtl.min.css');
+        /*bootstrapCss.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.rtl.min.css');*/
       } else {
         html.setAttribute('lang', 'en');
         html.setAttribute('dir', 'ltr');
-        bootstrapCss.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+        /*bootstrapCss.setAttribute('href', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');*/
       }
     });
   </script>
@@ -223,18 +223,6 @@
   <!-- Form functionality Script -->
   <script src="https://iigca.github.io/wd-ll/ll6.js"></script>
 
-  <!-- Google Translate Widget -->
-  <div id="google_translate_element" class="google-translate-container"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-  </script>
+ 
 </body>
 </html>
